@@ -1,8 +1,11 @@
-function NavBar({onPreviousClick, onNextClick}) {
+function NavBar({pokemonList, onSelectPokemon}) {
     return (
         <div>
-            <button onClick={onPreviousClick}>Précédent</button>
-            <button onClick={onNextClick}>Suivant</button>
+            {pokemonList.map((pokemon, index) => (
+                <button key={index} onClick={() => onSelectPokemon(index)}>
+                    {pokemon.name}
+                </button>
+            ))}
         </div>
     );
 }
