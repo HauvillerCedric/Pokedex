@@ -1,8 +1,6 @@
-/*import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';*/
 import './App.css';
 import PokemonCard from './components/PokemonCard';
+import NavBar from './components/NavBar';
 import {useState} from "react";
 
 function App() {
@@ -49,9 +47,8 @@ function App() {
     return (
         <>
             <div>
+                <NavBar onNextClick={handleNextClick} onPreviousClick={handlePreviousClick}/>
                 <PokemonCard pokemon={pokemonList[pokemonIndex]}/>
-                <button onClick={handlePreviousClick}>Précédent</button>
-                <button onClick={handleNextClick}>Suivant</button>
             </div>
         </>
     );
